@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kade Orin — Realtime Systems &amp; Game Engineer</title>
+<meta name="description" content="Portfolio of a realtime systems & game engineer building worlds that respond — Unity, WebGL, and procedural design.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-mark">
+      <span>K</span><span>O</span>
+    </div>
+    <div class="preloader-bar"><span id="preloader-fill"></span></div>
+    <div class="preloader-pct" id="preloader-pct">00%</div>
+  </div>
+</div>
+
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- HUD coordinate gizmo (signature element) -->
+<div class="hud" id="hud">
+  <div class="hud-row"><span class="hud-key">SCENE</span><span class="hud-val" id="hudScene">LAYER_00 · HERO</span></div>
+  <div class="hud-row"><span class="hud-key">POS</span><span class="hud-val" id="hudPos">X 0.00 &nbsp; Y 0.00</span></div>
+  <div class="hud-row"><span class="hud-key">SCROLL</span><span class="hud-val" id="hudScroll">000%</span></div>
+  <svg class="hud-gizmo" id="hudGizmo" viewBox="0 0 60 60">
+    <line x1="30" y1="30" x2="30" y2="6" stroke="#5ce1ff" stroke-width="1.4"/>
+    <line x1="30" y1="30" x2="52" y2="38" stroke="#ff6b4a" stroke-width="1.4"/>
+    <line x1="30" y1="30" x2="12" y2="44" stroke="#7c5cff" stroke-width="1.4"/>
+    <circle cx="30" cy="30" r="2.6" fill="#eef0f6"/>
+  </svg>
+</div>
+
+<!-- Fixed nav -->
+<nav class="nav">
+  <a href="#hero" class="nav-mark">K·O</a>
+  <div class="nav-links">
+    <a href="#about" data-nav>About</a>
+    <a href="#work" data-nav>Work</a>
+    <a href="#craft" data-nav>Craft</a>
+    <a href="#contact" data-nav>Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Say hello</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <canvas id="webgl"></canvas>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <p class="eyebrow" data-reveal>LAYER_00 — REALTIME ENGINEER</p>
+    <h1 class="hero-title">
+      <span class="line" data-reveal>I build worlds</span>
+      <span class="line" data-reveal>that react <em>to you.</em></span>
+    </h1>
+    <p class="hero-sub" data-reveal>
+      Realtime 3D, procedural terrain, and interaction systems —
+      engineered from the ground up, not just skinned on top.
+      Currently shaping an exploration game for mobile.
+    </p>
+    <div class="hero-actions" data-reveal>
+      <a href="#work" class="btn btn-primary"><span>View the work</span></a>
+      <a href="#contact" class="btn btn-ghost"><span>Get in touch</span></a>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span>SCROLL</span>
+    <div class="scroll-cue-track"><div class="scroll-cue-dot"></div></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>UNITY</span><span>·</span><span>THREE.JS</span><span>·</span><span>GLSL SHADERS</span><span>·</span><span>PROCEDURAL TERRAIN</span><span>·</span><span>C#</span><span>·</span><span>WEBGL</span><span>·</span><span>MOBILE TOUCH UX</span><span>·</span>
+    <span>UNITY</span><span>·</span><span>THREE.JS</span><span>·</span><span>GLSL SHADERS</span><span>·</span><span>PROCEDURAL TERRAIN</span><span>·</span><span>C#</span><span>·</span><span>WEBGL</span><span>·</span><span>MOBILE TOUCH UX</span><span>·</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="section-label">
+    <span class="section-index">LAYER_01</span>
+    <span class="section-name">ABOUT</span>
+  </div>
+  <div class="about-grid">
+    <div class="about-copy">
+      <h2 class="reveal-lines">
+        <span>Half engineer,</span>
+        <span>half world-builder.</span>
+      </h2>
+      <p data-fade>
+        I spend most of my time in the space between engineering and design —
+        writing the systems that let a player walk across a hillside and believe
+        it was always there. Terrain that scatters itself. Cameras that breathe.
+        Controls that disappear into the hand holding the phone.
+      </p>
+      <p data-fade>
+        My current focus is <strong>VoidAnsh</strong>, an exploration‑adventure
+        built in Unity — hand‑authored biomes, a procedurally scattered world,
+        and touch controls designed so the interface gets out of the way of
+        the exploring.
+      </p>
+    </div>
+    <div class="about-stats">
+      <div class="stat" data-fade>
+        <span class="stat-num" data-count="60">0</span>
+        <span class="stat-label">trees scattered across the first biome</span>
+      </div>
+      <div class="stat" data-fade>
+        <span class="stat-num" data-count="30">0</span>
+        <span class="stat-label">rocks placed by hand + procedure</span>
+      </div>
+      <div class="stat" data-fade>
+        <span class="stat-num" data-count="2">0</span>
+        <span class="stat-label">platforms targeted — iOS &amp; Android</span>
+      </div>
+    </div>
+  </div>
+  <div class="about-float" aria-hidden="true"></div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="work">
+  <div class="section-label">
+    <span class="section-index">LAYER_02</span>
+    <span class="section-name">SELECTED WORK</span>
+  </div>
+
+  <article class="project" data-tilt>
+    <div class="project-visual project-visual--terrain">
+      <canvas class="mini-canvas" data-scene="terrain"></canvas>
+    </div>
+    <div class="project-copy">
+      <span class="project-tag">01 — In development</span>
+      <h3>VoidAnsh</h3>
+      <p>
+        A mobile exploration‑adventure built in Unity. Rolling procedural
+        terrain, hand‑placed biomes, and a scenery system that scatters
+        foliage and rock across the world so no two hillsides read the same.
+        On‑screen joystick and swipe camera replace the keyboard entirely.
+      </p>
+      <ul class="project-meta">
+        <li>Unity · C#</li>
+        <li>Procedural scattering</li>
+        <li>Mobile touch controls</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="project project--reverse" data-tilt>
+    <div class="project-visual project-visual--particles">
+      <canvas class="mini-canvas" data-scene="particles"></canvas>
+    </div>
+    <div class="project-copy">
+      <span class="project-tag">02 — R&amp;D</span>
+      <h3>Realtime Shader Studies</h3>
+      <p>
+        An ongoing sandbox of GPU‑driven experiments — flow‑field particle
+        systems, distortion shaders, and camera‑reactive geometry, most of
+        which quietly end up inside whatever I'm building next.
+      </p>
+      <ul class="project-meta">
+        <li>Three.js · GLSL</li>
+        <li>GPU particles</li>
+        <li>Pointer‑reactive motion</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="project" data-tilt>
+    <div class="project-visual project-visual--grid">
+      <canvas class="mini-canvas" data-scene="grid"></canvas>
+    </div>
+    <div class="project-copy">
+      <span class="project-tag">03 — Internal tooling</span>
+      <h3>Scenery Scatter Toolkit</h3>
+      <p>
+        An in‑editor tool that distributes vegetation and rock formations
+        across generated terrain using density masks and jittered noise —
+        built so level design stays a creative pass, not a placement chore.
+      </p>
+      <ul class="project-meta">
+        <li>Unity Editor tooling</li>
+        <li>Noise‑based placement</li>
+        <li>Density painting</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- CRAFT -->
+<section id="craft" class="craft">
+  <div class="section-label">
+    <span class="section-index">LAYER_03</span>
+    <span class="section-name">HOW I BUILD</span>
+  </div>
+  <div class="craft-grid">
+    <div class="craft-card" data-fade>
+      <span class="craft-num">Terrain first</span>
+      <p>The ground gets built before anything stands on it. Movement,
+        camera, and pacing all take their cues from the shape of the land.</p>
+    </div>
+    <div class="craft-card" data-fade>
+      <span class="craft-num">Systems over set‑pieces</span>
+      <p>I'd rather write a scattering algorithm than place a thousand trees
+        by hand — then hand‑tune the result until it feels authored.</p>
+    </div>
+    <div class="craft-card" data-fade>
+      <span class="craft-num">Touch is the interface</span>
+      <p>Every control is designed for a thumb first. If it needs a keyboard
+        to feel good, it isn't finished.</p>
+    </div>
+    <div class="craft-card" data-fade>
+      <span class="craft-num">Motion with intent</span>
+      <p>Animation should explain something — depth, weight, cause and
+        effect — never just decorate a frame.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <canvas id="webgl-contact"></canvas>
+  <div class="contact-inner">
+    <span class="section-index">LAYER_04 — CONTACT</span>
+    <h2>Let's build something<br>that <em>moves.</em></h2>
+    <a class="contact-email" href="mailto:hello@kadeorin.dev">hello@kadeorin.dev</a>
+    <div class="contact-links">
+      <a href="#" target="_blank" rel="noopener">GitHub</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener">Itch.io</a>
+    </div>
+  </div>
+  <footer class="footer">
+    <span>© <span id="year"></span> Kade Orin</span>
+    <span>Built with Three.js &amp; GSAP</span>
+  </footer>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
